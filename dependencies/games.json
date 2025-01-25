@@ -1,3 +1,4 @@
 {
-  "86663971073208": {"Name": "Dea Hood", "Event": "DEAHOODMOUSEPOSx3^3", "Remote": "MainRemoteEvent"}
+  "86663971073208": {"Name": "Dea Hood", "Event": "DEAHOODMOUSEPOSx3^3", "Remote": "MainRemoteEvent"},
+  "104596910487466": {"Name": "New Hood", "Event": "UpdateMousePos", "Remote": "MainEvent"},
 }
