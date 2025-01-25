@@ -1,4 +1,3 @@
 {
   "86663971073208": {"Name": "Dea Hood", "Event": "DEAHOODMOUSEPOSx3^3", "Remote": "MainRemoteEvent"},
-  "111425376885509": {"Name": "Hood Z", "Event": "UpdateMousePos", "Remote": "MainEvent"},
 }
