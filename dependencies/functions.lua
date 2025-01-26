@@ -12,4 +12,12 @@ function functions:SearchRemotes(Name)
 	end
 end
 
+function functions:CheckGunHold(Child)
+	if Child:IsA("Tool") and Child:FindFirstChild("Ammo") and Child:FindFirstChild("Handle") then
+		 return true
+	end
+	
+	return false
+end
+
 return functions
