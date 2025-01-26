@@ -21,18 +21,14 @@ function functions:ReturnClosestToMouse(LocalPlayer)
 	local ClosestPlayer = nil
 
 	for _, Player in next, players:GetPlayers() do
-		if not Player:FindFirstChild("DataFolder") then continue end
+		local PlayerCharacter = Player.Character
+		if not PlayerCharacter then return end
 		
-		local PlayerCharacter = Player.Character or workspace.Players:FindFirstChild(Player.Name)
-
+		if not Player:FindFirstChild("DataFolder") or not PlayerCharacter:FindFirstChild("BodyEffects") then continue end
+		
 		if Player ~= LocalPlayer and PlayerCharacter then
 			local HumanoidRootPart = PlayerCharacter:FindFirstChild("HumanoidRootPart")
 			local Humanoid = PlayerCharacter:FindFirstChild("Humanoid")
-
-			if not HumanoidRootPart or not Humanoid then
-				HumanoidRootPart = workspace.Players[Player.Name]:FindFirstChild("HumanoidRootPart")
-				Humanoid = workspace.Players[Player.Name]:FindFirstChild("Humanoid")
-			end
 
 			if HumanoidRootPart and Humanoid and Humanoid.Health > 0 then
 				local RootToViewportPoint, IsOnScreen = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position)
