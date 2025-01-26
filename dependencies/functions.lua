@@ -26,8 +26,9 @@ function functions:ReturnClosestToMouse(LocalPlayer)
 	local ClosestPlayer = nil
 
 	for Index, Player in ipairs(game.Players:GetPlayers()) do
-		if Player ~= LocalPlayer and Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character.Humanoid.Health > 0 then
-			local ScreenPos, CameraVisible = workspace.CurrentCamera:WorldToViewportPoint(Player.Character.HumanoidRootPart.Position)
+		local PlayerCharacter = Player.Character or workspace.Players:FindFirstChild(Player.Name)
+		if Player ~= LocalPlayer and PlayerCharacter and PlayerCharacter:FindFirstChild("Humanoid") and PlayerCharacter.Humanoid.Health > 0 then
+			local ScreenPos, CameraVisible = workspace.CurrentCamera:WorldToViewportPoint(PlayerCharacter.HumanoidRootPart.Position)
 			if CameraVisible then
 				local DistanceToMouse = (Vector2.new(userInputService:GetMouseLocation().X, userInputService:GetMouseLocation().Y) - Vector2.new(ScreenPos.X, ScreenPos.Y)).Magnitude
 				if DistanceToMouse < ClosestDistance then
