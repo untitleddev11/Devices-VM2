@@ -47,4 +47,17 @@ function functions:ReturnClosestToMouse(LocalPlayer)
 	return ClosestPlayer
 end
 
+function functions:VisibilityCheck(Targeting, TargetPart)
+	local RayParams = RaycastParams.new()
+    RayParams.FilterType = Enum.RaycastFilterType.Blacklist
+    RayParams.FilterDescendantsInstances = {Targeting.Character, LocalPlayer.Character}
+
+    local Camera = workspace.CurrentCamera
+    local RayOrigin = Camera.CFrame.Position
+    local RayDirection = (TargetPart.Position - RayOrigin).Unit * (RayOrigin - TargetPart.Position).Magnitude
+
+    local Hit = workspace:Raycast(RayOrigin, RayDirection, RayParams)
+    return Hit == nil
+end
+
 return functions
