@@ -48,18 +48,4 @@ function functions:ReturnPlayerVelocity(Player)
 	return (Current - Old) / 0.145
 end
 
-function functions:ReturnIsVisible(Part, TargetCharacter)
-	local camera = workspace.CurrentCamera
-	local screenPosition, onScreen = camera:WorldToViewportPoint(Part.Position)
-
-	if not onScreen then
-		return false
-	end
-
-	local ray = Ray.new(camera.CFrame.Position, (Part.Position - camera.CFrame.Position).unit * 500)
-	local hit, hitPosition = workspace:FindPartOnRay(ray, TargetCharacter)
-
-	return hit == Part or hit == nil
-end
-
 return functions
