@@ -1,4 +1,5 @@
 {
   "86663971073208": {"Name": "Dea Hood", "Event": "DEAHOODMOUSEPOSx3^3", "Remote": "MainRemoteEvent"},
-  "78151430956789": {"Name": "Dee Hood", "Event": "UpdateMousePosII", "Remote": "MainEvent"}
+  "78151430956789": {"Name": "Dee Hood", "Event": "UpdateMousePosII", "Remote": "MainEvent"},
+  "95940394690093": {"Name": "Dee Hood", "Event": "UpdateMousePosII", "Remote": "MainEvent"}
 }
