@@ -41,4 +41,11 @@ function functions:ReturnClosestToMouse(LocalPlayer)
 	return ClosestPlayer
 end
 
+function functions:ReturnPlayerVelocity(Player)
+	local Old = Player.Character.HumanoidRootPart.Position
+	task.wait(0.145)
+	local Current = Player.Character.HumanoidRootPart.Position
+	return (Current - Old) / 0.145
+end
+
 return functions
