@@ -48,4 +48,12 @@ function functions:ReturnPlayerVelocity(Player)
 	return (Current - Old) / 0.145
 end
 
+function functions:ReturnIsVisible(Part, TargetCharacter)
+	local CurrentCamera = workspace.CurrentCamera
+	local ray = Ray.new(CurrentCamera.CFrame.Position, (Part.Position - CurrentCamera.CFrame.Position).Unit * 500)
+	local Hit = workspace:FindPartOnRay(ray, TargetCharacter)
+
+	return Hit == Part or Hit == nil
+end
+
 return functions
