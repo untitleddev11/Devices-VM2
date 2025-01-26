@@ -47,7 +47,7 @@ function functions:ReturnClosestToMouse(LocalPlayer)
 	return ClosestPlayer
 end
 
-function functions:VisibilityCheck(Targeting, TargetPart)
+function functions:VisibilityCheck(LocalPlayer, Targeting, TargetPart)
 	local RayParams = RaycastParams.new()
     RayParams.FilterType = Enum.RaycastFilterType.Blacklist
     RayParams.FilterDescendantsInstances = {Targeting.Character, LocalPlayer.Character}
