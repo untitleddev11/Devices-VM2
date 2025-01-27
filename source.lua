@@ -388,8 +388,8 @@ RunService.Heartbeat:Connect(function()
 		end
 	end
 
-	if getgenv().CheatSettings.Preferences.CheckPlayerKO and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
-		local KOd = LocalPlayer.Character:FindFirstChild("BodyEffects")["K.O"].Value
+	if getgenv().CheatSettings.Preferences.CheckPlayerKO and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("BodyEffects") and LocalPlayer.Character.BodyEffects:FindFirstChild("K.O") then
+		local KOd = LocalPlayer.Character.BodyEffects["K.O"].Value
 		local Grabbed = LocalPlayer.Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
 		if LocalPlayer.Character.Humanoid.Health < 1 or KOd or Grabbed then
 			if OnTarget then
