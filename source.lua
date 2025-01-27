@@ -271,7 +271,7 @@ LocalPlayer.Character.ChildAdded:Connect(function(Child)
                 local MousePos = UserInputService:GetMouseLocation()
                 local MouseDistance = (Vector2.new(ScreenPos.X, ScreenPos.Y) - MousePos).Magnitude
 
-                if not getgenv().CheatSettings.Preferences.SilentAimMouseDistanceCheck or MouseDistance <= getgenv().CheatSettings.Preferences.MaxMouseDistance then
+                if not getgenv().CheatSettings.Preferences.SilentAimMouseDistanceCheck or MouseDistance <= tonumber(getgenv().CheatSettings.Preferences.MaxMouseDistance) then
                     local Position = ClosestPart.Position
                     local RandomOffset = Vector3.new(
                         math.random(-0.01, 0.01),
@@ -332,7 +332,7 @@ LocalPlayer.CharacterAdded:Connect(function(RespawnCharacter)
 					local MousePos = UserInputService:GetMouseLocation()
 					local MouseDistance = (Vector2.new(ScreenPos.X, ScreenPos.Y) - MousePos).Magnitude
 	
-					if not getgenv().CheatSettings.Preferences.SilentAimMouseDistanceCheck or MouseDistance <= getgenv().CheatSettings.Preferences.MaxMouseDistance then
+					if not getgenv().CheatSettings.Preferences.SilentAimMouseDistanceCheck or MouseDistance <= tonumber(getgenv().CheatSettings.Preferences.MaxMouseDistance) then
 						local Position = ClosestPart.Position
 						local RandomOffset = Vector3.new(
 							math.random(-0.01, 0.01),
