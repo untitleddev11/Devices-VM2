@@ -279,7 +279,9 @@ LocalPlayer.Character.ChildAdded:Connect(function(Child)
                         math.random(-0.01, 0.01)
                     )
 
-                    Position += RandomOffset
+                    local MinimumHeight = 5
+        			Position += RandomOffset
+        			Position = Vector3.new(Position.X, math.max(Position.Y, MinimumHeight), Position.Z)
                     MainEvent:FireServer(Event, Position + ((Targeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.SilentPrediction))
                 end
             end
@@ -338,8 +340,10 @@ LocalPlayer.CharacterAdded:Connect(function(RespawnCharacter)
 							math.random(-0.01, 0.01)
 						)
 	
-						Position += RandomOffset
-						MainEvent:FireServer(Event, Position + ((Targeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.SilentPrediction))
+						local MinimumHeight = 5
+        				Position += RandomOffset
+        				Position = Vector3.new(Position.X, math.max(Position.Y, MinimumHeight), Position.Z)
+                    	MainEvent:FireServer(Event, Position + ((Targeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.SilentPrediction))
 					end
 				end
 			end
