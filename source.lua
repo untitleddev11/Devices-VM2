@@ -154,7 +154,7 @@ TabAiming:Combo({
 	Selected = getgenv().CheatSettings.Aiming.BodyPart,
 	Label = "body part",
 	Items = {
-		"Head", "UpperTorso", "LowerTorso", "LeftUpperArm", "LeftLowerArm", "RightUpperArm", "RightLowerArm", "LeftUpperLeg", "LeftLowerLeg", "RightUpperLeg", "RightLowerLeg"
+		"Head", "UpperTorso", "LowerTorso", "LeftUpperArm", "LeftLowerArm", "RightUpperArm", "RightLowerArm"
 	},
 	Callback = function(self, Value)
 		getgenv().CheatSettings.Aiming.BodyPart = Value
