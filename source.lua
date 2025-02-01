@@ -99,6 +99,14 @@ TabAiming:Checkbox({
 	end
 })
 
+TabAiming:Checkbox({
+	Label = "notify (notification when locked)",
+	Value = getgenv().CheatSettings.Preferences.Notify,
+	Callback = function(self, Value)
+		getgenv().CheatSettings.Preferences.Notify = Value
+	end
+})
+
 TabAiming:Separator({
 	Text = "Keybinds"
 })
@@ -366,9 +374,22 @@ UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
 
 			if Targeting == nil then
 				OnTarget = false
+			else
+				if getgenv().CheatSettings.Preferences.Notify then
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "LOCKED",
+					Text = "Locked on to: ".. Targeting.Name
+				})
+				end
 			end
 		else
 			Targeting = nil
+			if getgenv().CheatSettings.Preferences.Notify then
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "UN-LOCKED",
+					Text = "Unlocked from: ".. Targeting.Name
+				})
+			end
 		end
 	end
 end)
