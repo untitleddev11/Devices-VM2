@@ -354,7 +354,7 @@ end)
 UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
 	if GameProcessedEvent then return end
 
-	if Input.KeyCode == getgenv().CheatSettings.Aiming.AimLockBind and getgenv().CheatSettings.Aiming.AimLock then
+	if Input.KeyCode == getgenv().CheatSettings.Aiming.AimLockBind then
 		OnTarget = not OnTarget
 
 		if OnTarget then
@@ -374,7 +374,7 @@ UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
 end)
 
 RunService.Heartbeat:Connect(function()
-	if Targeting ~= nil then
+	if Targeting ~= nil and getgenv().CheatSettings.Aiming.AimLock then
 		local TargetPart = Targeting.Character[getgenv().CheatSettings.Aiming.BodyPart]
         local Position = TargetPart.Position
         local Main = CFrame.new(workspace.CurrentCamera.CFrame.Position, Position + ((Targeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.AimPrediction))
