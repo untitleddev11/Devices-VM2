@@ -324,9 +324,8 @@ function DevicesVM:Init()
                             math.random(-0.01, 0.01)
                         )
 
-                        local MinimumHeight = 5
+                        
                         Position += RandomOffset
-                        Position = Vector3.new(Position.X, math.max(Position.Y, MinimumHeight), Position.Z)
                         MainEvent:FireServer(Event, Position + ((SilentTargeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.SilentPrediction))
                     end
                 end
@@ -403,9 +402,7 @@ function DevicesVM:Init()
                                 math.random(-0.01, 0.01)
                             )
 
-                            local MinimumHeight = 5
                             Position += RandomOffset
-                            Position = Vector3.new(Position.X, math.max(Position.Y, MinimumHeight), Position.Z)
                             MainEvent:FireServer(Event, Position + ((SilentTargeting.Character.HumanoidRootPart.Velocity) * getgenv().CheatSettings.Aiming.SilentPrediction))
                         end
                     end
