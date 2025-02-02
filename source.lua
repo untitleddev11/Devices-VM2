@@ -438,13 +438,13 @@ function DevicesVM:Init()
                     end
                 end
             else
-                Targeting = nil
-                if getgenv().CheatSettings.Preferences.Notify then
+		if getgenv().CheatSettings.Preferences.Notify then
                     game:GetService("StarterGui"):SetCore("SendNotification",{
                         Title = "AIMLOCK",
                         Text = "Unlocked from: ".. Targeting.Name
                     })
                 end
+                Targeting = nil
             end
         end
     end)
